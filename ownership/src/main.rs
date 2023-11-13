@@ -30,10 +30,16 @@ fn print_references(){
     println!("{}", *ref3);
 }
 
+fn swap(ref1: &mut f64, ref2: &mut f64){
+    let temp = *ref1;
+    *ref1 = *ref2;
+    *ref2 = temp;
+}
+
 fn main() {
     //Exercice 2.1
-    let x = 13.0;
-    let y = 12.0;
+    let mut x = 13.0;
+    let mut y = 12.0;
     println!("{}", average(x, y));
     println!("{}", average(x, y));
 
@@ -56,5 +62,15 @@ fn main() {
 
     //Exercice 3.1
     print_references();
+
+    //Exercice 3.2
+    swap(&mut x, &mut y);
+    println!("{}", x);
+    println!("{}", y);
+
+    swap(&mut x, &mut y);
+    println!("{}", x);
+    println!("{}", y);
+
 
 }
