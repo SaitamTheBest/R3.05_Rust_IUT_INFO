@@ -3,6 +3,7 @@ fn average(x: f64, y: f64) -> f64 {
     return result;
 }
 
+#[derive(Clone)]
 struct Rectangle{
     length: f64,
     width: f64,
@@ -34,4 +35,9 @@ fn main() {
 
     //Exercice 2.2.2
     println!("{}", perimetre2(&my_rectangle));
+
+    //Exercice 2.2.3
+    println!("{}", perimetre(my_rectangle.clone()))
+
+
 }
