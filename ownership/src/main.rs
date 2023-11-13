@@ -20,6 +20,16 @@ fn perimetre2(rectangle: &Rectangle) ->f64{
     return result;
 }
 
+fn print_references(){
+    let mut x = 10;
+    //let ref1 = &x;
+    //let ref2 = &x;
+    let ref3 = &mut x;
+    //println!("{}", *ref1);
+    //println!("{}", *ref2);
+    println!("{}", *ref3);
+}
+
 fn main() {
     //Exercice 2.1
     let x = 13.0;
@@ -44,5 +54,7 @@ fn main() {
     println!("{}", perimetre(my_rectangle));
     println!("{}", perimetre(my_rectangle));
 
+    //Exercice 3.1
+    print_references();
 
 }
