@@ -35,6 +35,10 @@ fn convert_to_int2(chaine: &str){
     let chaine2 :String = resultat.to_string();
     println!("le carré de {chaine1} vaut {chaine2}");
 }
+fn convert_to_int3(chaine: &str) -> anyhow::Result<()>{
+    let numero : i32 = chaine.trim().parse()?;
+    Ok(())
+}
 fn main() {
     //Exercice 2.1
     let sentence1 = "Bonjour Limoges";
@@ -61,9 +65,10 @@ fn main() {
 
     //Exercice 3.2
     convert_to_int2(string1);
-    convert_to_int2(string2);
+    //convert_to_int2(string2);
 
     //Exercice 3.3
-
+    println!("{:?}", convert_to_int3(string1));
+    println!("{:?}", convert_to_int3(string2));
 
 }
