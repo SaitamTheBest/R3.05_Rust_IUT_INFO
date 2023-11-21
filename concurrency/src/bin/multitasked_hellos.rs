@@ -7,14 +7,15 @@ struct Parameters{
 async fn main(){
     let args = Parameters::parse();
     let n=args.n;
+    let mut tableau = vec![];
     for i in 0..n {
-        let thread1 = tokio::spawn(async move {
+        let thread = tokio::spawn(async move {
             println!("Bonjour n°{}", i);
-        });
-        let thread2 = tokio::spawn(async move {
             println!("Au revoir n°{}", i);
         });
-        thread1.await;
-        thread2.await;
+        tableau.push(thread);
     };
+    for thread in tableau{
+        thread.await;
+    }
 }
