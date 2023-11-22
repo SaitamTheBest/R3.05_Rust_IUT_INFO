@@ -7,7 +7,7 @@ struct Parameters{
 fn main(){
     let args = Parameters::parse();
     let n=args.n;
-    let str = RwLock::new("Bonjour");
+    let mut str = RwLock::new("Bonjour");
     let mut tableau = vec![];
     for i in 0..n {
         let clone_str = str.read().unwrap().clone();
